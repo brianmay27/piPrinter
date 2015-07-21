@@ -12,7 +12,7 @@ public class CustomConfigAdapterImpl extends ConfigAdapterImpl {
 
     @Override
     public boolean isPrivilegedNamespace(String namespace) {
-        if (namespace.contains("print")) {
+        if (namespace != null && "print".contains(namespace)) {
             return true;
         }
         return super.isPrivilegedNamespace(namespace);

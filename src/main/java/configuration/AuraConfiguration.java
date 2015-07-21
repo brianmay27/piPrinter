@@ -7,13 +7,16 @@ import org.auraframework.util.ServiceLoaderImpl;
 import org.auraframework.util.ServiceLocatorConfigurator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 
 /**
  * Created by brian on 7/20/15.
  */
 @Configuration
 @ServiceLoaderImpl.AuraConfiguration
+@Lazy
 public class AuraConfiguration {
 
     @ServiceLoaderImpl.Impl

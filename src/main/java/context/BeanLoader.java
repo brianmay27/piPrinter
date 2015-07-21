@@ -1,6 +1,8 @@
 package context;
 
 import configuration.AuraConfiguration;
+import org.auraframework.Aura;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,7 +19,10 @@ public class BeanLoader {
 
     }
 
-    private void init() {
+    private synchronized void init() {
+        if (ac != null) {
+            return;
+        }
         try {
             ac = new AnnotationConfigApplicationContext(AuraConfiguration.class);
         } catch (Exception e) {
@@ -29,7 +34,11 @@ public class BeanLoader {
         if (ac == null) {
             init();
         }
-        return ac == null ? null :ac.getBean(clazz);
+        try {
+            return ac == null ? null : ac.getBean(clazz);
+        } catch (NoSuchBeanDefinitionException e) {
+            return null;
+        }
     }
 
     private static class BeanHolder {
