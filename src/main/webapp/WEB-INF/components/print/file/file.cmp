@@ -1,0 +1,5 @@
+<aura:component>
+    <aura:attribute name="fileName" type="String"/>
+    <aura:attribute name="path" type="String"/>
+    <a onclick="{!c.click}">{#fileName}</a>
+</aura:component>

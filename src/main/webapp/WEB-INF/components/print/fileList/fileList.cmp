@@ -1,0 +1,4 @@
+<aura:component model="java://ui.aura.components.print.file.fileListModel">
+    <aura:attribute name="files" type="Aura.component[]"/>
+    {!m.getFiles}
+</aura:component>

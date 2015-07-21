@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:attribute name="isAdmin" type="Boolean"/>
+    <ui:header>
+        <h1>Print It!</h1>
+        <aura:set attribute="right">>
+        <a href="/logout">logout</a>
+        </aura:set>
+    </ui:header>
+</aura:component>

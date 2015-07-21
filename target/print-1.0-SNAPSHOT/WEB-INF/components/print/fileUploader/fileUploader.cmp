@@ -1,0 +1,5 @@
+<aura:component >
+    <input type="file" id="gCode" accept="gcode"/>
+    <input type="file" id="x3g" accept="x3g"/>
+    <ui:button label="upload" press="{!c.upload}"/>
+</aura:component>
