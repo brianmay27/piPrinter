@@ -1,8 +1,9 @@
-package ui.aura.components.print.file;
+package print;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import configuration.Configuration;
 import org.auraframework.Aura;
 import org.auraframework.def.ComponentDef;
 import org.auraframework.instance.Component;
@@ -24,7 +25,7 @@ public class fileListModel {
     public List<Component> files;
     public fileListModel() {
         Set<File> files = Sets.newHashSet();
-        File root = new File("/home/brian/projects/print/uploads/");
+        File root = new File(Configuration.UPLOADS);
         files = getFilesFromDisk(files, root);
         this.files = Lists.newArrayList();
         for (File file : files) {

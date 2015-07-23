@@ -1,4 +1,4 @@
-package ui.aura.components.print.controllers;
+package print.controllers;
 
 import org.auraframework.system.Annotations;
 import replicatorg.app.Printer;

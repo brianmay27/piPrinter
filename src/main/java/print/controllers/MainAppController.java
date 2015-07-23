@@ -1,4 +1,4 @@
-package ui.aura.components.print.controllers;
+package print.controllers;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;

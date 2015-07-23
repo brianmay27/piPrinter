@@ -19,7 +19,6 @@
 
 package replicatorg.machine;
 
-import net.miginfocom.swing.MigLayout;
 import org.w3c.dom.Node;
 import replicatorg.app.Base;
 import replicatorg.app.gcode.GCodeCommand;

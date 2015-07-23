@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
+import replicatorg.app.Printer;
 
 /**
  * Created by brian on 7/20/15.
@@ -28,5 +29,10 @@ public class AuraConfiguration {
     @Primary
     public ConfigAdapter getConfigAdapter() {
         return new CustomConfigAdapterImpl();
+    }
+
+    @Bean
+    public Printer getPrinter() {
+        return new Printer();
     }
 }

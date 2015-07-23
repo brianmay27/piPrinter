@@ -3,8 +3,6 @@
         <table>
             <ul><span>.gcode</span></ul>
             <ul><input type="file" id="gCode" accept=".gcode"/></ul>
-            <ul><span>.x3g</span></ul>
-            <ul><input type="file" id="x3g" accept=".x3g"/></ul>
             <ui:button label="upload" press="{!c.upload}"/>
         </table>
     </div>

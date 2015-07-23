@@ -1,5 +1,6 @@
 package servlets;
 
+import configuration.Configuration;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -34,7 +35,7 @@ public class FileUploaderServlet extends HttpServlet {
             return;
         }
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
-        DiskFileItemFactory factory = new DiskFileItemFactory(25*1024*1024, new File("/home/brian/projects/print/uploads"));
+        DiskFileItemFactory factory = new DiskFileItemFactory(25*1024*1024, new File(Configuration.UPLOADS));
 
         ServletFileUpload upload = new ServletFileUpload(factory);
 
@@ -44,20 +45,20 @@ public class FileUploaderServlet extends HttpServlet {
             Iterator i = fileItems.iterator();
             while (i.hasNext()) {
                 FileItem item = (FileItem) i.next();
-                if (!item.getName().toLowerCase().endsWith(".gcode") ||!item.getName().toLowerCase().endsWith(".x3g")) {
+                String fileName = item.getName();
+                if (!fileName.toLowerCase().endsWith(".gcode") || (fileName.startsWith("/") || fileName.startsWith("."))) {
                     throw new RuntimeException("Invalid file");
                 }
-                String fileName = item.getName();
                 Calendar cal = Calendar.getInstance();
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                String path = "/home/brian/projects/print/uploads/%s/%s/%s";
+                String path = Configuration.UPLOADS + "/%s/%s/%s";
                 File dir = new File(String.format(path, user.getPrincipal(), format.format(cal.getTime()), ""));
-                dir.mkdir();
+                dir.mkdirs();
                 File file;
                 if (fileName.lastIndexOf('/') >= 0) {
-                    file = new File(String.format(path, format.format(cal.getTime()), fileName.substring(fileName.lastIndexOf('/'))));
+                    file = new File(String.format(path, user.getPrincipal(), format.format(cal.getTime()), fileName.substring(fileName.lastIndexOf('/'))));
                 } else {
-                    file = new File(String.format(path, format.format(cal.getTime()), fileName));
+                    file = new File(String.format(path, user.getPrincipal(), format.format(cal.getTime()), fileName));
                 }
 
                 item.write(file);

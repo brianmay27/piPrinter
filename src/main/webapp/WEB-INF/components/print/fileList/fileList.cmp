@@ -1,4 +1,6 @@
-<aura:component model="java://ui.aura.components.print.file.fileListModel">
-    <aura:attribute name="files" type="Aura.component[]"/>
-    {!m.getFiles}
+<aura:component model="java://print.fileListModel">
+    <aura:attribute name="_files" type="Aura.component[]"/>
+    <aura:registerEvent name="startPrint" type="print:startPrint"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    {!v._files}
 </aura:component>

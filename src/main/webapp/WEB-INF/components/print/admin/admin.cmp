@@ -1,0 +1,4 @@
+<aura:component controller="java://print.AdminController">
+    <aura:handler event="print:startPrint" action="{!c.handlePrint}"/>
+    <print:fileList/>
+</aura:component>

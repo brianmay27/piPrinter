@@ -1,5 +1,8 @@
 <aura:component>
     <aura:attribute name="fileName" type="String"/>
     <aura:attribute name="path" type="String"/>
-    <a onclick="{!c.click}">{#fileName}</a>
+
+    <aura:registerEvent name="startPrint" type="print:startPrint"/>
+
+    <a onclick="{!c.click}">{#v.fileName}</a>
 </aura:component>
