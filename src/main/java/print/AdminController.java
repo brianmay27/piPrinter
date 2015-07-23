@@ -13,7 +13,7 @@ public class AdminController {
     @Annotations.AuraEnabled
     public static void print(@Annotations.Key("file") String file) {
         Printer printer = BeanLoader.get().get(Printer.class);
-        //printer.Print(file);
+        printer.Print(file);
     }
 
 }
