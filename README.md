@@ -1,5 +1,6 @@
 # piPrinter
 Web client that allows remote upload and 3d printing from a rasp pi
+<b>This is pretty bad on the first gen pi's, recomend using a pi 2
 
 ##About
 This project is a combination of [replicatorG](http://replicat.org/), an open source project that is used to provide users with a graphical
