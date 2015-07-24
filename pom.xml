@@ -150,77 +150,37 @@
             <artifactId>cglib</artifactId>
             <version>3.1</version>
         </dependency>
-
-        <!--local-->
         <dependency>
-            <groupId>vecmath</groupId>
+            <groupId>javax.vecmath</groupId>
             <artifactId>vecmath</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/vecmath.jar</systemPath>
+            <version>1.5.2</version>
         </dependency>
         <dependency>
-            <groupId>twitter4j</groupId>
-            <artifactId>twitter4j</artifactId>
-            <version>2.0.10</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/twitter4j-2.0.10.jar</systemPath>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core</artifactId>
+            <version>1.3.1</version>
         </dependency>
         <dependency>
-            <groupId>servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.4</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/servlet-api-2.4.jar</systemPath>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core-utils</artifactId>
+            <version>1.3.1</version>
         </dependency>
         <dependency>
-            <groupId>RXTXcomm</groupId>
-            <artifactId>RXTXComm</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/RXTXcomm.jar</systemPath>
+            <groupId>org.rxtx</groupId>
+            <artifactId>rxtx</artifactId>
+            <version>2.1.7</version>
         </dependency>
         <dependency>
-            <groupId>quaqua</groupId>
-            <artifactId>quaqua</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/quaqua.jar</systemPath>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>5.0</version>
         </dependency>
         <dependency>
             <groupId>mrj</groupId>
-            <artifactId>mrj</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/mrj.jar</systemPath>
+            <artifactId>MRJToolkitStubs</artifactId>
+            <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>miglayout</groupId>
-            <artifactId>miglayout</artifactId>
-            <version>3.7.4</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/miglayout-3.7.4.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>j3dcore</groupId>
-            <artifactId>j3dcore</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/j3dcore.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>j3dutils</groupId>
-            <artifactId>j3dutils</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/j3dutils.jar</systemPath>
-        </dependency>
-
     </dependencies>
-
-
-
-
 
     <build>
         <pluginManagement>
