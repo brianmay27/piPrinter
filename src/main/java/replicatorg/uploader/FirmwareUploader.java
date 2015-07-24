@@ -6,7 +6,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import replicatorg.app.Base;
 import replicatorg.drivers.Version;
-import replicatorg.uploader.ui.UploaderDialog;
 
 import javax.swing.*;
 import javax.xml.parsers.DocumentBuilder;
@@ -52,9 +51,7 @@ public class FirmwareUploader {
 	}
 
 	public void run() {
-		// Load firmware.xml
-		UploaderDialog selector = new UploaderDialog(parent, this);
-		selector.setVisible(true);
+
 		// wait for dialog to close
 		synchronized(FirmwareUploader.class) {
 			uploader = null;
