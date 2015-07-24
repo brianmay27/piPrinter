@@ -17,6 +17,7 @@ public class MachineServiceListener implements MachineListener {
     @Override
     public void machineStateChanged(MachineStateChangeEvent evt) {
         isPrinting = evt.getState().isPrinting();
+        System.out.println(evt.getMessage());
     }
 
     @Override

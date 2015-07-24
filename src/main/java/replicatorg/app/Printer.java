@@ -18,7 +18,7 @@ import java.io.FileReader;
 public class Printer {
 
 
-    private boolean bedoccupied = true;
+    private boolean bedoccupied = false;
     private Machine machine;
     private MachineCallbackHandler handler;
     private MachineServiceListener machineListener;
