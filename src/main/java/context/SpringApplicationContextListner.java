@@ -13,6 +13,8 @@ public class SpringApplicationContextListner implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         new File(Configuration.UPLOADS).mkdirs();
+        //BeanLoader.get();
+        System.out.println("Ports: " + System.getProperties().getProperty("gnu.io.rxtx.SerialPorts"));
     }
 
     @Override
