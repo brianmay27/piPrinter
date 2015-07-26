@@ -20,3 +20,6 @@ This project is fully maven (Thank Aura-Note for the backbone. So after cloning,
 to compile and download all the necessary maven dependencies. And:
 <pre><code>mvn jetty:run</code></pre>
 to startup the server which runs on port 8080. The default username and password can be located in src/main/webapp/WEB-INF/shiro.ini
+
+To debug use:
+<pre><code>export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n"</code></pre>
