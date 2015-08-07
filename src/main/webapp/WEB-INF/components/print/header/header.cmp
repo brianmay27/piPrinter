@@ -1,9 +1,16 @@
 <aura:component>
     <aura:attribute name="isAdmin" type="Boolean"/>
+    <aura:registerEvent name="openDialog" type="ui:openDialog"/>
     <ui:header>
         <h1>Print It!</h1>
-        <aura:set attribute="right">>
-        <a href="/logout">logout</a>
+        <aura:set attribute="right">
+            <a href="/logout">logout</a>
+            <aura:if isTrue="{!v.isAdmin}">
+                <ui:button label="Settings" press="{!c.openSettings}"/>
+            </aura:if>
         </aura:set>
     </ui:header>
+    <aura:if isTrue="{!v.isAdmin}">
+        <print:settings isModal="true" aura:id="settingsDialog"/>
+    </aura:if>
 </aura:component>

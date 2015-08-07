@@ -18,7 +18,7 @@ import replicatorg.app.Printer;
 @Configuration
 @ServiceLoaderImpl.AuraConfiguration
 @Lazy
-public class AuraConfiguration {
+public class BeanConfiguration {
 
     @ServiceLoaderImpl.Impl
     public static ServiceLocatorConfigurator auraImplPrintServiceLocatiorConfig() {
@@ -34,5 +34,10 @@ public class AuraConfiguration {
     @Bean
     public Printer getPrinter() {
         return new Printer();
+    }
+
+    @Bean
+    public Settings getSettings() {
+        return new Settings();
     }
 }
