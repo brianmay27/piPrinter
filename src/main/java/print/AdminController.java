@@ -17,4 +17,10 @@ public class AdminController {
         printer.Print(file);
     }
 
+    @Annotations.AuraEnabled
+    public static void clearBed() {
+        Printer printer = BeanLoader.get().get(Printer.class);
+        printer.clearBed();
+    }
+
 }

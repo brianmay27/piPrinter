@@ -1,0 +1,12 @@
+.THIS .progressBar {
+    width: 250px;
+    height: 25px;
+    border: solid 3px black;
+}
+
+.THIS .progressItem {
+    width: 25px;
+    color: blue;
+    padding-right: 2px;
+    padding-left: 2px;
+}

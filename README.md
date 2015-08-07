@@ -15,6 +15,9 @@ a user to upload a gcode file and an admin (currently the user is an admin) to s
  Curently, the system is setup to a FlashForge creator pro but can be any machine that replicatorG can print to.
 
 ##HowTo
+Until I can figure out how to add this to the build, getting librxtx is required by replicatorG so:
+<pre><code>sudo apt-get install librxtx-java</code></pre>
+Will get the needed java library.
 This project is fully maven (Thank Aura-Note for the backbone. So after cloning, simply:
 <pre><code>mvn compile</code></pre>
 to compile and download all the necessary maven dependencies. And:

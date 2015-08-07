@@ -1,0 +1,17 @@
+<aura:component controller="java://print.StatusController"
+                model="java://print.StatusModel">
+    <aura:attribute name="_isPrinting" type="boolean"/>
+    <aura:attribute name="_progress" type="integer"/>
+    <aura:attribute name="_progressItems" type="List"/>
+    <aura:attribute name="_status" type="string"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <div>
+        <ui:outputText value="{!v._status}"/>
+        <aura:if isTrue="{!v._isPrinting}">
+            <div class="percent">{!v._progress}%</div>
+            <progress value="{!v._progress}" max="100"/>
+        </aura:if>
+    </div>
+</aura:component>

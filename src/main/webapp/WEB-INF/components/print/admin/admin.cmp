@@ -1,4 +1,13 @@
 <aura:component controller="java://print.AdminController">
     <aura:handler event="print:startPrint" action="{!c.handlePrint}"/>
-    <print:fileList/>
+    <ui:block>
+        <aura:set attribute="left">
+            <print:fileList/>
+        </aura:set>
+        <aura:set attribute="right">
+            <ui:button label="Clear bed" press="{!c.clearBed}"/>
+            <print:printStatus/>
+        </aura:set>
+    </ui:block>
+
 </aura:component>

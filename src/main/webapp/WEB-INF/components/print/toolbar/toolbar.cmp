@@ -1,4 +1,4 @@
 <aura:component>
-    aura:attribute name="isAdmin" type="String"/>
+    <aura:attribute name="isAdmin" type="String"/>
 
 </aura:component>

@@ -1,0 +1,19 @@
+<aura:component extends="ui:dialog" model="java://print.SettingsModel">
+    <aura:set attribute="title" value="Settings"/>
+    <aura:set attribute="description" value="Settings dialog"/>
+    <aura:set attribute="clickOutToClose" value="false"/>
+    <div>
+        <ui:inputSelect label="Machine:" aura:id="machine">
+            <ui:inputSelectOption label="{#m.currrentMachine}" text="{#m.currentMachine}" value="true"/>
+            <aura:iteration items="{#m.machineTypes}" var="machine">
+                <ui:inputSelectOption label="{!machine}" text="{!machine}"/>
+            </aura:iteration>
+        </ui:inputSelect>
+        <ui:inputText aura:id="port" label="Port:" value="{#m.currentPort}"/>
+    </div>
+    <aura:set attribute="buttons">
+        <ui:dialogButtons defaultButtons="cancel">
+            <ui:button label="Save" press="{!c.onSave}"/>
+        </ui:dialogButtons>
+    </aura:set>
+</aura:component>
