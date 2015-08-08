@@ -50,10 +50,32 @@ public class Settings {
         return settings.getPort();
     }
 
+    public void update(String machine, String port) {
+        settings.setMachineType(machine);
+        settings.setPort(port);
+        ConnectionSource cs = null;
+        try {
+            cs = new JdbcConnectionSource(Configuration.DATABASE);
+            Dao<SettingsInstance, String> settingDao = DaoManager.createDao(cs, SettingsInstance.class);
+            settingDao.update(settings);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (cs != null) {
+                try {
+                    cs.close();
+                } catch (SQLException e) {
+                    //I tried.
+                }
+            }
+        }
+
+    }
+
     @DatabaseTable(tableName = "settings")
     private static class SettingsInstance {
         @DatabaseField(id = true)
-        private String username;
+        private final String username;
         @DatabaseField(columnName = "machineType")
         private String machineType;
         @DatabaseField(columnName = "port")

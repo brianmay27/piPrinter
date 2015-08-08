@@ -1,12 +1,17 @@
-<aura:component extends="ui:dialog" model="java://print.SettingsModel">
+<aura:component extends="ui:dialog" model="java://print.SettingsModel" controller="java://print.SettingsController">
     <aura:set attribute="title" value="Settings"/>
     <aura:set attribute="description" value="Settings dialog"/>
     <aura:set attribute="clickOutToClose" value="false"/>
-    <div>
+    <div class="settingsContent">
         <ui:inputSelect label="Machine:" aura:id="machine">
-            <ui:inputSelectOption label="{#m.currrentMachine}" text="{#m.currentMachine}" value="true"/>
             <aura:iteration items="{#m.machineTypes}" var="machine">
-                <ui:inputSelectOption label="{!machine}" text="{!machine}"/>
+                <aura:if isTrue="{!machine == m.currentMachine}">
+                    <ui:inputSelectOption label="{!machine}" text="{!machine}" value="true"/>
+                    <aura:set attribute="else">
+                        <ui:inputSelectOption label="{!machine}" text="{!machine}"/>
+                    </aura:set>
+                </aura:if>
+
             </aura:iteration>
         </ui:inputSelect>
         <ui:inputText aura:id="port" label="Port:" value="{#m.currentPort}"/>

@@ -10,6 +10,10 @@
             }
         })
         $A.enqueueAction(action);
+    },
+
+    onClearBed : function(cmp) {
+        $A.enqueueAction(cmp.get('c.clearBed'));
     }
 
 })

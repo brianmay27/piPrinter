@@ -1,3 +1,33 @@
 .THIS {
     background-color: white;
 }
+
+.THIS.dialog {
+    top: 30%;
+    position: absolute;
+}
+
+.THIS .settingsContent {
+    padding: 1rem;
+}
+
+.THIS h2 {
+    text-align: center;
+    padding: 1rem;
+    background-color: lightblue;
+}
+
+.THIS label {
+    padding-right: 1rem;
+    width: 85px;
+    display: inline-block;
+}
+
+.THIS .uiInput {
+    margin: .3rem;
+    display: inline-block;
+}
+
+.THIS input, .THIS select {
+
+}

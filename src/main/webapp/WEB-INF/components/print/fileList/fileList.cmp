@@ -2,5 +2,5 @@
     <aura:attribute name="_files" type="Aura.component[]"/>
     <aura:registerEvent name="startPrint" type="print:startPrint"/>
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
-    {!v._files}
+    <ul>{!v._files}</ul>
 </aura:component>

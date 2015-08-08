@@ -4,5 +4,10 @@
 
     <aura:registerEvent name="startPrint" type="print:startPrint"/>
 
-    <a onclick="{!c.click}">{#v.fileName}</a>
+    <li>
+        <div class="fileItem">
+            <a onclick="{!c.click}">{#v.fileName}</a>
+            <a onclick="{!c.delete}">Delete</a>
+        </div>
+    </li>
 </aura:component>

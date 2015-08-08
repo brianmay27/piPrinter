@@ -4,9 +4,6 @@
     border: solid 3px black;
 }
 
-.THIS .progressItem {
-    width: 25px;
-    color: blue;
-    padding-right: 2px;
-    padding-left: 2px;
+.THIS .percent {
+    text-align: center;
 }
